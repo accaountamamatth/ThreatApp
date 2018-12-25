@@ -28,44 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label usrname_label;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.passwordbox = new System.Windows.Forms.TextBox();
-            this.usernamebox = new System.Windows.Forms.TextBox();
-            this.pwdlabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
+            this.pwdlabel = new System.Windows.Forms.Label();
+            this.usernamebox = new System.Windows.Forms.TextBox();
+            this.passwordbox = new System.Windows.Forms.TextBox();
+            this.newuserButton = new System.Windows.Forms.Button();
             usrname_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.loginButton);
-            this.panel1.Controls.Add(this.pwdlabel);
-            this.panel1.Controls.Add(usrname_label);
-            this.panel1.Controls.Add(this.usernamebox);
-            this.panel1.Controls.Add(this.passwordbox);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 450);
-            this.panel1.TabIndex = 0;
-            // 
-            // passwordbox
-            // 
-            this.passwordbox.Location = new System.Drawing.Point(210, 170);
-            this.passwordbox.Name = "passwordbox";
-            this.passwordbox.Size = new System.Drawing.Size(204, 20);
-            this.passwordbox.TabIndex = 0;
-            // 
-            // usernamebox
-            // 
-            this.usernamebox.Location = new System.Drawing.Point(210, 115);
-            this.usernamebox.Name = "usernamebox";
-            this.usernamebox.Size = new System.Drawing.Size(204, 20);
-            this.usernamebox.TabIndex = 0;
             // 
             // usrname_label
             // 
@@ -77,6 +50,31 @@
             usrname_label.TabIndex = 1;
             usrname_label.Text = "Username";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.newuserButton);
+            this.panel1.Controls.Add(this.loginButton);
+            this.panel1.Controls.Add(this.pwdlabel);
+            this.panel1.Controls.Add(usrname_label);
+            this.panel1.Controls.Add(this.usernamebox);
+            this.panel1.Controls.Add(this.passwordbox);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(803, 450);
+            this.panel1.TabIndex = 0;
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(191, 398);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Enter";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // pwdlabel
             // 
             this.pwdlabel.AutoSize = true;
@@ -87,15 +85,29 @@
             this.pwdlabel.TabIndex = 2;
             this.pwdlabel.Text = "Password";
             // 
-            // loginButton
+            // usernamebox
             // 
-            this.loginButton.Location = new System.Drawing.Point(191, 399);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "Enter";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.usernamebox.Location = new System.Drawing.Point(210, 115);
+            this.usernamebox.Name = "usernamebox";
+            this.usernamebox.Size = new System.Drawing.Size(204, 20);
+            this.usernamebox.TabIndex = 0;
+            // 
+            // passwordbox
+            // 
+            this.passwordbox.Location = new System.Drawing.Point(210, 169);
+            this.passwordbox.Name = "passwordbox";
+            this.passwordbox.Size = new System.Drawing.Size(204, 20);
+            this.passwordbox.TabIndex = 0;
+            // 
+            // newuserButton
+            // 
+            this.newuserButton.Location = new System.Drawing.Point(384, 398);
+            this.newuserButton.Name = "newuserButton";
+            this.newuserButton.Size = new System.Drawing.Size(75, 23);
+            this.newuserButton.TabIndex = 3;
+            this.newuserButton.Text = "New User";
+            this.newuserButton.UseVisualStyleBackColor = true;
+            this.newuserButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Form1
             // 
@@ -118,6 +130,7 @@
         private System.Windows.Forms.Label pwdlabel;
         private System.Windows.Forms.TextBox usernamebox;
         private System.Windows.Forms.TextBox passwordbox;
+        private System.Windows.Forms.Button newuserButton;
     }
 }
 

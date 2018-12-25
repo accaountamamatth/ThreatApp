@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -18,6 +19,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        public class HashSalt
+        {
+            public string Hash { get; set; }
+            public string Salt { get; set; }
+        }
+
+       
         private void loginButton_Click(object sender, EventArgs e)
         {
             User user = GetUserByUsername(usernamebox.Text);
@@ -32,6 +40,7 @@ namespace WindowsFormsApp1
             {
                 //Login Failed
                 //Thow Message Box
+                MessageBox.Show("Failed Username or Password");
             }
         }
     }
