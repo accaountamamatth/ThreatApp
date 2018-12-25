@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -21,7 +22,9 @@ namespace WindowsFormsApp1
        
         private void loginButton_Click(object sender, EventArgs e)
         {
-            User user = GetUserByUsername(usernamebox.Text);
+
+       
+            string user = GetUserByUsername(usernamebox.Text);
             bool isPasswordMatched = VerifyPassword(passwordbox.Text, user.Hash, user.Salt)
             
             if (isPasswordMatched)
@@ -35,6 +38,36 @@ namespace WindowsFormsApp1
                 //Thow Message Box
                 MessageBox.Show("Failed Username or Password");
             }
+        }
+       
+        private void newuserButton_Click(object sender, EventArgs e)
+        {
+            var connectionString = "Data Source = EVOPC18\\PMSMART; Initial Catalog = NORTHWND; User ID = test; Password = test";
+            var sql = "UPDATE Username UPDATE PASSWORD";
+
+            try
+            {
+                using(var connection = new SqlConnection(connectionString))
+                {
+                    using(var command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.Add("@Password", SqlDbType.NVarChar).Value = passwordbox.Text;
+                        command.Parameters.Add("@Username", SqlDbType.NVarChar).Value = usernamebox.Text;
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Failed to Update! Error Message: {e.Message}");
+            }
+
+
+            HashSalt hashSalt = GenerateSaltedHash(passwordbox.Text);
+
+            
+
         }
     }
 }
