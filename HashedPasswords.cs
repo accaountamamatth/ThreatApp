@@ -2,7 +2,15 @@
 using System;
 using System.IO;
 using System.Text;
-using System.Security.Cryptography; 
+using System.Security.Cryptography;
+
+//Main function for hashing passwords
+
+public class HashSalt
+{
+    public string Hash { get; set; }
+    public string Salt { get; set; }
+}
 
 public static HashSalt GenerateSaltedHash(int size, string password)
 {
